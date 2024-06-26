@@ -3,6 +3,7 @@ const capitalize = require("./capitalize")
 const reverseString = require("./reverseString")
 const calculator = require("./calculator")
 const caesarCipher = require("./caesarCipher")
+const analyzeArray = require("./analyzeArray")
 
 test("adds 1+2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3)
@@ -54,4 +55,13 @@ test("Caesar chiper HeLLo should return KhOOr", () => {
 
 test("Caesar chiper 'Hello, World!' should return Khoor, Zruog!", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!")
+})
+
+test("analyze array function should return object with correct average, min, max and length", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toMatchObject({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  })
 })
